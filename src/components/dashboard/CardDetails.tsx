@@ -1,4 +1,4 @@
 
 export const CardDetails = () => {
-  return <div>CardDetails</div>;
+  return <div className="mt-4">CardDetails</div>;
 };
