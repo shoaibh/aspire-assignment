@@ -6,6 +6,7 @@ export type Transaction = {
   type: TransactionType;
   amount: number;
   place: string;
+  date_of_transaction: string;
 }
 
 export type Card = {

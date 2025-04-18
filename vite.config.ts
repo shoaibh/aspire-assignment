@@ -3,16 +3,12 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import svgr from 'vite-plugin-svgr'
+// @ts-ignore
+import eslint from 'vite-plugin-eslint';
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss(),  svgr({
-    svgrOptions: {
-      icon: true,
-    },
-    // 👇 THIS LINE IS REQUIRED for `ReactComponent` named import to work
-    include: '**/*.svg',
-  }),],
+  plugins: [react(), tailwindcss(),  svgr(), eslint()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

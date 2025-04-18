@@ -88,6 +88,9 @@ export const generateDummyCardsWithTransactions = (enteredName?: string): Card[]
             type: transactionTypes[Math.floor(Math.random() * transactionTypes.length)],
             amount: Math.floor(Math.random() * 500) + 10,
             place: places[Math.floor(Math.random() * places.length)],
+            date_of_transaction: new Date(Date.now() - Math.floor(Math.random() * 10000000000))
+                .toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })
+                .replace(/ /g, ' '),
           })) as Transaction[]
       };
       return card;
